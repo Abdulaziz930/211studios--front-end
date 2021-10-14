@@ -1,0 +1,20 @@
+@media screen and(max-width: 768px) {
+  body {
+    header {
+      .navbar {
+        .navbar-nav {
+          .dropdown-menu {
+            text-align: center;
+          }
+        }
+        .nav-item {
+          padding-left: 0;
+          .nav-link {
+            padding-left: 0;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+header {
+  background-color: $bg-color;
+  .nav-item {
+    &:not(:first-child) {
+      padding-left: 15px;
+    }
+    .nav-link {
+      color: $link-color;
+      transition: all 0.5s;
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+  .navbar-toggler {
+    .hamburger-menu-icon {
+      position: absolute;
+      width: 10%;
+      height: 5px;
+      background-color: $secondary-color;
+      border-radius: 3px;
+      transition: all 0.5s ease-in-out;
+      right: 10px;
+      &::before {
+        @include hambugerMenu(-10px);
+      }
+      &::after {
+        @include hambugerMenu(10px);
+      }
+    }
+  }
+  .open {
+    .hamburger-menu-icon {
+      transform: translateX(-20px);
+      background-color: transparent;
+      &::before {
+        transform: rotate(45deg) translate(15px, -15px);
+      }
+      &::after {
+        transform: rotate(-45deg) translate(15px, 15px);
+      }
+    }
+  }
+}
