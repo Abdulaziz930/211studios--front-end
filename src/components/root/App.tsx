@@ -1,10 +1,11 @@
+import Navi from "../layout/header/Navi";
 
 
 function App() {
   return (
-    <div className="App">
-      App Component
-    </div>
+    <>
+      <Navi />
+    </>
   );
 }
 
