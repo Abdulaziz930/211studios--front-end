@@ -1,0 +1,17 @@
+.carousel-item {
+  height: 88vh;
+  img {
+    height: 100%;
+  }
+  .carousel-caption {
+    top: 40%;
+    transform: translateY(-50%);
+    text-align: left;
+    h3 {
+      @include text(70px, 700, $secondary-color);
+      text-transform: uppercase;
+      line-height: 0.99em;
+      letter-spacing: -0.8px;
+    }
+  }
+}
