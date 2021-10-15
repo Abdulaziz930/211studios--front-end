@@ -12,3 +12,16 @@ export interface ISliderItem {
   title: string;
   image: string;
 }
+
+interface Category {
+  id: number;
+  name: string;
+}
+
+export interface IGameData {
+  id: number;
+  name: string;
+  description: string;
+  category: Category;
+  image: string;
+}

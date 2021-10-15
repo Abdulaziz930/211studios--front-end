@@ -5,14 +5,89 @@
       height: 100%;
     }
     .carousel-caption {
-      top: 40%;
+      top: 38%;
       transform: translateY(-50%);
       text-align: left;
       h3 {
-        @include text(70px, 700, $secondary-color);
+        @include text(85px, 700, $secondary-color);
         text-transform: uppercase;
         line-height: 0.99em;
         letter-spacing: -0.8px;
+      }
+    }
+  }
+}
+.last-games {
+  margin-top: 65px;
+  .games-header {
+    h2 {
+      position: relative;
+      @include text(30px, 700, $secondary-color);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      &::after {
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: 10%;
+        background-color: $border-color;
+        bottom: -15px;
+        left: 0;
+      }
+    }
+  }
+  .games-content {
+    margin-top: 50px;
+    .card {
+      position: relative;
+      border: 2px solid $second-border-color;
+      border-radius: 0;
+      background-color: #03090d;
+      box-shadow: 0 0 50px rgba(41, 48, 55, 0.15);
+      .category-btn {
+        position: absolute;
+        right: 3%;
+        top: 3%;
+        font-family: $btn-font;
+        @include btn(11px 12px 10px 12px, $third-color, 12px, 700, none);
+        line-height: 1;
+        letter-spacing: 0.05em;
+        color: $text-color;
+        &:hover {
+          @include btnHover($third-color);
+        }
+      }
+      img {
+        height: 210px;
+        border-radius: 0;
+        border-color: $second-border-color;
+      }
+      .card-body {
+        padding: 35px 40px 20px 40px;
+        font-family: $secondary-font;
+        .card-title {
+          a {
+            @include text(24px, 700, $secondary-color);
+            line-height: 1.3;
+            &:hover {
+              text-decoration: none;
+            }
+          }
+          margin-bottom: 18px;
+        }
+        .card-text {
+          color: $link-color;
+          margin-bottom: 30px;
+        }
+        .btn {
+          font-family: $btn-font;
+          @include btn(16px 20px, $button-color, 12px, 400, none);
+          line-height: 1;
+          letter-spacing: 0.05em;
+          &:hover {
+            @include btnHover($button-color);
+          }
+        }
       }
     }
   }

@@ -1,4 +1,13 @@
 body {
   background-color: $primary-color;
-  font-family: $primary-color;
+  font-family: $primary-font;
+  ::-moz-selection {
+    color: $secondary-color;
+    background: $selection-color;
+  }
+
+  ::selection {
+    color: $secondary-color;
+    background: $selection-color;
+  }
 }
