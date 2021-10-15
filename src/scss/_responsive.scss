@@ -1,9 +1,11 @@
 @media screen and(max-width: 1024px) {
   body {
-    .carousel-item {
-      .carousel-caption {
-        h3 {
-          font-size: 120px;
+    .intro {
+      .carousel-item {
+        .carousel-caption {
+          h3 {
+            font-size: 120px;
+          }
         }
       }
     }
@@ -33,17 +35,19 @@
         }
       }
     }
-    .carousel-item {
-      height: 80vh;
-      .carousel-caption {
-        top: 50%;
-        transform: translateY(-50%);
-        text-align: center;
-        h3 {
-          @include text(70px, 700, $secondary-color);
-          text-transform: uppercase;
-          line-height: 0.99em;
-          letter-spacing: -0.8px;
+    .intro {
+      .carousel-item {
+        height: 80vh;
+        .carousel-caption {
+          top: 50%;
+          transform: translateY(-50%);
+          text-align: center;
+          h3 {
+            @include text(70px, 700, $secondary-color);
+            text-transform: uppercase;
+            line-height: 0.99em;
+            letter-spacing: -0.8px;
+          }
         }
       }
     }
@@ -59,17 +63,19 @@
         }
       }
     }
-    .carousel-item {
-      height: 80vh;
-      .carousel-caption {
-        top: 40%;
-        transform: translateY(-50%);
-        text-align: center;
-        h3 {
-          @include text(50px, 700, $secondary-color);
-          text-transform: uppercase;
-          line-height: 0.99em;
-          letter-spacing: -0.8px;
+    .intro {
+      .carousel-item {
+        height: 80vh;
+        .carousel-caption {
+          top: 40%;
+          transform: translateY(-50%);
+          text-align: center;
+          h3 {
+            @include text(50px, 700, $secondary-color);
+            text-transform: uppercase;
+            line-height: 0.99em;
+            letter-spacing: -0.8px;
+          }
         }
       }
     }

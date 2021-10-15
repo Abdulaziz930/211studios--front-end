@@ -7,7 +7,7 @@ const Intro: React.FC = () => {
   const [{ data }] = useAsyncData<ISliderItem[]>("Home/getSliders");
 
   return (
-    <div>
+    <div className='intro'>
       <Carousel>
         {data?.map((slider) => (
           <Carousel.Item key={slider.id}>
