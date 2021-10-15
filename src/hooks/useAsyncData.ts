@@ -1,4 +1,4 @@
-import axios from "axios";
+import { mainAPI } from "../api";
 import { useEffect, useState, useCallback } from "react";
 import { IAsyncData } from "../models/models";
 import { INITIAL_ASYNC_DATA } from "../utils/consts";
@@ -8,7 +8,7 @@ export function useAsyncData<T>(url: string): [IAsyncData<T>, () => void] {
 
   const getData = useCallback(() => {
     if (!!url) {
-      axios
+      mainAPI
         .get<T>(url)
         .then(({ data }) => {
           setData((oldData) => ({ ...oldData, data, error: undefined }));
