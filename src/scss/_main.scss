@@ -140,6 +140,7 @@
       }
       .btnBox {
         .btn {
+          font-family: $btn-font;
           @include btn(13px 14px, $secondary-color, 12px, 700, none);
           color: $primary-color;
           border-radius: 0;
@@ -147,6 +148,35 @@
             @include btnHover($secondary-color);
           }
         }
+      }
+    }
+  }
+}
+.our-company {
+  height: 730px;
+  padding-top: 65px;
+  margin-top: 75px;
+  .content-title {
+    margin-top: 35px;
+    h1 {
+      @include text(82px, 700, $secondary-color);
+    }
+  }
+  .content-description {
+    font-family: $secondary-font;
+    p {
+      @include text(18px, 400, $paragraph-color);
+    }
+  }
+  .linkBox {
+    margin-top: 15px;
+    a {
+      @include text(15px, 700, $third-color);
+      font-family: $btn-font;
+      transition: all 0.3s;
+      &:hover {
+        text-decoration: none;
+        color: $text-color;
       }
     }
   }

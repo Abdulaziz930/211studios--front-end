@@ -51,6 +51,15 @@
         }
       }
     }
+    .our-company {
+      height: 610px;
+      margin-bottom: 100px;
+      .content-title {
+        h1 {
+          font-size: 55px;
+        }
+      }
+    }
   }
 }
 
@@ -126,6 +135,14 @@
               width: 100%;
             }
           }
+        }
+      }
+    }
+    .our-company {
+      height: inherit;
+      .content-title {
+        h1 {
+          font-size: 40px;
         }
       }
     }

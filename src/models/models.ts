@@ -44,3 +44,10 @@ export interface IGameDetailData {
   image: string;
   video?: string;
 }
+
+export interface IStudioData {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+}
