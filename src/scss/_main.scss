@@ -19,74 +19,132 @@
 }
 .last-games {
   margin-top: 65px;
-  .games-header {
-    h2 {
-      position: relative;
-      @include text(30px, 700, $secondary-color);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      &::after {
-        content: "";
-        position: absolute;
-        height: 3px;
-        width: 10%;
-        background-color: $border-color;
-        bottom: -15px;
-        left: 0;
+  .games-content {
+    margin-top: 50px;
+  }
+}
+.game-detail {
+  .game-detail-header {
+    position: relative;
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #03090d 100%);
+    }
+    .header-title {
+      position: absolute;
+      width: 100%;
+      top: 65%;
+      z-index: 5;
+      .title {
+        margin-top: 25px;
+        h1 {
+          @include text(78px, 700, $secondary-color);
+          text-transform: uppercase;
+        }
       }
     }
   }
-  .games-content {
+  .game-detail-content {
     margin-top: 50px;
-    .card {
-      position: relative;
-      border: 2px solid $second-border-color;
-      border-radius: 0;
-      background-color: #03090d;
-      box-shadow: 0 0 50px rgba(41, 48, 55, 0.15);
-      margin-bottom: 15px;
-      .category-btn {
-        position: absolute;
-        right: 3%;
-        top: 3%;
-        font-family: $btn-font;
-        @include btn(11px 12px 10px 12px, $third-color, 12px, 700, none);
-        line-height: 1;
-        letter-spacing: 0.05em;
-        color: $text-color;
-        &:hover {
-          @include btnHover($third-color);
+    .description {
+      font-family: $secondary-font;
+      p {
+        color: $paragraph-color;
+        &:first-child {
+          @include text(19px, 400, $secondary-color);
+          &::first-letter {
+            font-size: 74px;
+            margin-right: 22px;
+            float: left;
+            text-align: center;
+            line-height: 1;
+          }
+        }
+        strong {
+          color: $secondary-color;
         }
       }
-      img {
-        height: 210px;
-        border-radius: 0;
-        border-color: $second-border-color;
+    }
+    .video-player {
+      margin-top: 35px;
+    }
+    .details {
+      font-family: $secondary-font;
+      padding-left: 35px;
+      h2 {
+        @include text(13px, 700, $heading-color);
       }
-      .card-body {
-        padding: 35px 40px 20px 40px;
-        font-family: $secondary-font;
-        .card-title {
-          a {
-            @include text(24px, 700, $secondary-color);
-            line-height: 1.3;
-            &:hover {
-              text-decoration: none;
+      p {
+        color: $paragraph-color;
+      }
+      .details-item {
+        &:not(:first-child) {
+          margin-top: 35px;
+        }
+      }
+      .platforms-box {
+        .platform-items {
+          display: flex;
+          .platform-item {
+            margin-top: 10px;
+            &:not(:first-child) {
+              padding-left: 20px;
+            }
+            i {
+              font-size: 20px;
             }
           }
-          margin-bottom: 18px;
         }
-        .card-text {
-          color: $link-color;
-          margin-bottom: 30px;
-        }
+      }
+    }
+    .more-games {
+      margin-top: 65px;
+      .more-games-content {
+        margin-top: 50px;
+      }
+    }
+  }
+}
+.newsletter {
+  margin-top: 80px;
+  .newsletter-content {
+    .newsletter-content-description {
+      margin-top: 30px;
+      .description {
+        font-family: $secondary-font;
+        @include text(15px, 400, $paragraph-color);
+      }
+    }
+  }
+  .newsletter-form {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    .form-box {
+      width: 100%;
+      .email-input {
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid $secondary-color;
+        padding-left: 0;
+        height: 100%;
+      }
+      .btnBox {
         .btn {
-          font-family: $btn-font;
-          @include btn(16px 20px, $button-color, 12px, 400, none);
-          line-height: 1;
-          letter-spacing: 0.05em;
+          @include btn(13px 14px, $secondary-color, 12px, 700, none);
+          color: $primary-color;
+          border-radius: 0;
           &:hover {
-            @include btnHover($button-color);
+            @include btnHover($secondary-color);
           }
         }
       }

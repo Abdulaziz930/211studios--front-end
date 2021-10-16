@@ -1,11 +1,13 @@
+import NewsLetter from "../layout/subscribe/NewsLetter";
 import Navi from "../layout/header/Navi";
-import Home from "../pages/home/Home";
+import Routes from "../routes/Routes";
 
 function App() {
   return (
     <>
       <Navi />
-      <Home />
+      <Routes />
+      <NewsLetter />
     </>
   );
 }

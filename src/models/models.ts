@@ -13,7 +13,7 @@ export interface ISliderItem {
   image: string;
 }
 
-interface Category {
+export interface ICategory {
   id: number;
   name: string;
 }
@@ -22,6 +22,25 @@ export interface IGameData {
   id: number;
   name: string;
   description: string;
-  category: Category;
+  category: ICategory;
   image: string;
+}
+
+interface IPlatform {
+  id: number;
+  name: string;
+  logo: string;
+}
+
+export interface IGameDetailData {
+  id: number;
+  name: string;
+  description: string;
+  categories: ICategory[];
+  platforms: IPlatform[];
+  creationDate: string;
+  lastModificationDate?: string;
+  size: string;
+  image: string;
+  video?: string;
 }
