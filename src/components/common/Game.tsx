@@ -1,39 +1,62 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { IGameData } from "../../models/models";
+import CategoryButton from "./CategoryButton";
+import { useHistory } from "react-router-dom";
 
 interface IProps {
   game: IGameData;
+  isDetail: boolean;
 }
 
-const Game: React.FC<IProps> = ({ game }) => {
+const Game: React.FC<IProps> = ({ game, isDetail }) => {
+  const { push } = useHistory();
   return (
     <>
-      <div className='card'>
-        <Link to={`games/${game.id}`}>
+      <div className='card game-card'>
+        {isDetail ? (
           <img
             className='card-img-top img-fluid'
             src={`http://localhost:3000/images/${game.image}`}
             alt={game.name}
+            onClick={() => push(`${game.id}`)}
           />
-        </Link>
-        <Link
-          to={`categories/${game.category.id}`}
-          className='btn category-btn'>
-          {game.category.name}
-        </Link>
+        ) : (
+          <Link to={`games/${game.id}`}>
+            <img
+              className='card-img-top img-fluid'
+              src={`http://localhost:3000/images/${game.image}`}
+              alt={game.name}
+            />
+          </Link>
+        )}
+        <CategoryButton category={game.category} />
         <div className='card-body'>
           <h5 className='card-title'>
-            <Link to={`games/${game.id}`}>{game.name}</Link>
+            {isDetail ? (
+              <p onClick={() => push(`${game.id}`)} className='heading'>
+                {game.name}
+              </p>
+            ) : (
+              <Link to={`games/${game.id}`} className='heading'>
+                {game.name}
+              </Link>
+            )}
           </h5>
           <p
             className='card-text'
             dangerouslySetInnerHTML={{
               __html: game.description.slice(0, 120),
             }}></p>
-          <Link to={`games/${game.id}`} className='btn'>
-            View Game
-          </Link>
+          {isDetail ? (
+            <p onClick={() => push(`${game.id}`)} className='btn'>
+              View Game
+            </p>
+          ) : (
+            <Link to={`games/${game.id}`} className='btn'>
+              View Game
+            </Link>
+          )}
         </div>
       </div>
     </>
