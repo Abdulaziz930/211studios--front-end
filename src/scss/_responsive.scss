@@ -66,6 +66,9 @@
 @media screen and(max-width: 576px) {
   body {
     header {
+      .navbar-brand {
+        width: 10%;
+      }
       .navbar-toggler {
         .hamburger-menu-icon {
           width: 10%;
