@@ -2,10 +2,11 @@ import React, { useState, useCallback } from "react";
 import { Container } from "reactstrap";
 import { NavLink } from "react-router-dom";
 
-const Navi: React.FC = () => {
+const Navi: React.FC = (props) => {
   const [hamburgerMenuClassName, setHamburgerMenuClassName] =
     useState<string>("navbar-toggler");
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isSticky, setIsSticky] = useState<boolean>(false);
 
   const handleClickHamburgerMenu = useCallback(() => {
     if (!isOpen) {
@@ -17,12 +18,22 @@ const Navi: React.FC = () => {
     }
   }, [isOpen]);
 
+  const handleChangeNavbar = useCallback(() => {
+    window.scrollY > 25 ? setIsSticky(true) : setIsSticky(false);
+  }, []);
+
+  window.addEventListener("scroll", handleChangeNavbar);
+
   return (
-    <header>
+    <header className={isSticky ? "sticky" : ""}>
       <Container>
         <nav className='navbar navbar-expand-lg'>
           <NavLink className='navbar-brand' to='/'>
-            211 Studios
+            <img
+              src='http://localhost:3000/images/211logo.png'
+              alt='navbar-logo'
+              className='img-fluid'
+            />
           </NavLink>
           <button
             className={hamburgerMenuClassName}
