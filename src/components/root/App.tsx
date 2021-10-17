@@ -1,6 +1,7 @@
 import NewsLetter from "../layout/subscribe/NewsLetter";
 import Navi from "../layout/header/Navi";
 import Routes from "../routes/Routes";
+import Footer from "../layout/footer/Footer";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Navi />
       <Routes />
       <NewsLetter />
+      <Footer />
     </>
   );
 }

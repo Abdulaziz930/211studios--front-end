@@ -1,0 +1,77 @@
+footer {
+  margin-top: 60px;
+  padding-top: 90px;
+  border-top: 1px solid $third-border-color;
+  background-image: linear-gradient(180deg, #090f14 0%, #1a2026 100%);
+  .logo-box {
+    width: 20%;
+  }
+  .description {
+    font-family: $secondary-font;
+    margin-top: 20px;
+    p {
+      @include text(15px, 600, $paragraph-color);
+    }
+  }
+  .social-medias {
+    margin-top: 20px;
+    a {
+      @include text(20px, 600, $link-color);
+      transition: all 0.3s;
+      &:not(:first-child) {
+        padding-left: 18px;
+      }
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+  .footer-pages {
+    font-family: $btn-font;
+    h2 {
+      @include text(20px, 700, $third-color);
+      margin-bottom: 25px;
+    }
+    ul {
+      padding-left: 0;
+      list-style-type: none;
+      li {
+        &:not(:first-child) {
+          margin-top: 10px;
+        }
+        a {
+          @include text(15px, 400, $link-color);
+          transition: all 0.3s;
+          &:hover {
+            text-decoration: none;
+            color: $secondary-color;
+          }
+          i {
+            color: $third-color;
+            padding-right: 5px;
+          }
+        }
+      }
+    }
+  }
+  .copy-right {
+    position: relative;
+    font-family: $secondary-font;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    margin-top: 30px;
+    p {
+      @include text(15px, 400, $second-text-color);
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 6%;
+      background-color: #4c4d54;
+      top: 30px;
+      left: 0;
+    }
+  }
+}
