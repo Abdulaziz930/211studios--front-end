@@ -51,3 +51,14 @@ export interface IStudioData {
   description: string;
   image: string;
 }
+
+export interface IFooterDescriptionData {
+  id: number;
+  footerDescription: string;
+}
+
+export interface ISocialMediaData {
+  id: number;
+  socialLink: string;
+  socialIcon: string;
+}
