@@ -1,10 +1,25 @@
 @media screen and(max-width: 1024px) {
   body {
+    .sticky {
+      padding: inherit;
+      background-color: $bg-color;
+    }
     .intro {
       .carousel-item {
         .carousel-caption {
           h3 {
             font-size: 120px;
+          }
+        }
+      }
+    }
+    .studio-wrapper {
+      .studio-content {
+        height: inherit;
+        margin-bottom: 40px;
+        .content-title {
+          h1 {
+            font-size: 70px;
           }
         }
       }
@@ -35,6 +50,10 @@
         }
       }
     }
+    .sticky {
+      padding: inherit;
+      background-color: $bg-color;
+    }
     .intro {
       .carousel-item {
         height: 80vh;
@@ -60,6 +79,34 @@
         }
       }
     }
+    .studio-wrapper {
+      .studio-content {
+        height: inherit;
+        background-position: center center;
+        margin-bottom: 35px;
+        .content-title {
+          h1 {
+            font-size: 55px;
+          }
+        }
+      }
+      .team-members-content {
+        .team-member-card {
+          .card {
+            .overlay-text {
+              .card-heading {
+                .strong-title {
+                  font-size: 30px;
+                }
+                .small-title {
+                  font-size: 20px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -74,6 +121,10 @@
           width: 10%;
         }
       }
+    }
+    .sticky {
+      padding: inherit;
+      background-color: $bg-color;
     }
     .intro {
       .carousel-item {
@@ -152,6 +203,35 @@
     footer {
       .footer-pages {
         margin-top: 30px;
+      }
+    }
+    .studio-wrapper {
+      .banner-wrapper {
+        top: -35px;
+        .text-container {
+          .title {
+            h1 {
+              font-size: 40px;
+            }
+          }
+          .description {
+            p {
+              font-size: 15px;
+            }
+          }
+        }
+      }
+      .studio-content {
+        .content-title {
+          h1 {
+            font-size: 60px;
+          }
+        }
+      }
+      .team-members-content {
+        .team-member-card {
+          padding-bottom: 30px;
+        }
       }
     }
   }

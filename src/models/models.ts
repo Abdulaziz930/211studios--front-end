@@ -62,3 +62,20 @@ export interface ISocialMediaData {
   socialLink: string;
   socialIcon: string;
 }
+
+export interface IStudioPageData {
+  id: number;
+  title: string;
+  description: string;
+  bannerTitle: string;
+  bannerDescription: string;
+  image: string;
+  bannerImage: string;
+}
+
+export interface ITeamMemberData {
+  id: string;
+  fullName: string;
+  position: string;
+  image: string;
+}

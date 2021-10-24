@@ -8,4 +8,7 @@ export const APP_ROUTES = {
       PATH: "/games/:id",
     },
   },
+  STUDIO: {
+    PATH: "/our-studios",
+  },
 };
