@@ -284,3 +284,51 @@
     }
   }
 }
+.team-member-detail-wrapper {
+  .team-member-detail-content-wrapper {
+    .team-member-detail-content {
+      font-family: $secondary-font;
+      padding-top: 60px;
+      .fullname {
+        border-bottom: 1px solid $border-color;
+        h1 {
+          @include text(40px, 700, $secondary-color);
+          padding-bottom: 15px;
+          margin-bottom: 0;
+        }
+      }
+      .position {
+        font-family: $btn-font;
+        border-bottom: 1px solid $border-color;
+        h4 {
+          @include text(24px, 700, $third-color);
+          padding: 15px 0;
+          margin-bottom: 0;
+        }
+      }
+      .description {
+        border-bottom: 1px solid $border-color;
+        p {
+          color: $paragraph-color;
+          font-weight: 600;
+          padding: 15px 0;
+          margin-bottom: 0;
+        }
+      }
+      .social-medias {
+        padding-top: 15px;
+        a {
+          @include text(23px, 400, $link-color);
+          transition: all 0.3s;
+          &:hover {
+            text-decoration: none;
+            color: $secondary-color;
+          }
+          i {
+            padding-right: 15px;
+          }
+        }
+      }
+    }
+  }
+}

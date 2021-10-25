@@ -10,5 +10,8 @@ export const APP_ROUTES = {
   },
   STUDIO: {
     PATH: "/our-studios",
+    TEAM_MEMBER_DETAIL: {
+      PATH: "/team-member/:id",
+    },
   },
 };
