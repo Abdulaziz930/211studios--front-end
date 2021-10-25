@@ -79,3 +79,25 @@ export interface ITeamMemberData {
   position: string;
   image: string;
 }
+
+interface IUserSocialMediaData {
+  id: string;
+  link: string;
+  icon: string;
+}
+
+export interface ITeamMemberDetailData {
+  id: string;
+  fullName: string;
+  position: string;
+  description: string;
+  image: string;
+  userSocialMediasDto: IUserSocialMediaData[];
+}
+
+export interface ITeamMemberBannerData {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+}
