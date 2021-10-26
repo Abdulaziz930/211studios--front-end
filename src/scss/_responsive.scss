@@ -107,6 +107,17 @@
         }
       }
     }
+    .banner-wrapper {
+      top: -40px;
+    }
+    .team-member-detail-wrapper {
+      .team-member-detail-content-wrapper {
+        margin-top: 30px;
+        .team-member-detail-content {
+          padding-top: 0;
+        }
+      }
+    }
   }
 }
 
@@ -206,21 +217,6 @@
       }
     }
     .studio-wrapper {
-      .banner-wrapper {
-        top: -35px;
-        .text-container {
-          .title {
-            h1 {
-              font-size: 40px;
-            }
-          }
-          .description {
-            p {
-              font-size: 15px;
-            }
-          }
-        }
-      }
       .studio-content {
         .content-title {
           h1 {
@@ -231,6 +227,30 @@
       .team-members-content {
         .team-member-card {
           padding-bottom: 30px;
+        }
+      }
+    }
+    .banner-wrapper {
+      top: inherit;
+      .text-container {
+        top: 30%;
+        .title {
+          h1 {
+            font-size: 30px;
+          }
+        }
+        .description {
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    .team-member-detail-wrapper {
+      .team-member-detail-content-wrapper {
+        margin-top: 50px;
+        .team-member-detail-content {
+          padding-top: 30px;
         }
       }
     }
