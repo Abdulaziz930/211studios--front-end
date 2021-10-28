@@ -71,6 +71,9 @@
           color: $secondary-color;
         }
       }
+      h4 {
+        color: $secondary-color;
+      }
     }
     .video-player {
       margin-top: 35px;
@@ -326,6 +329,42 @@
           }
           i {
             padding-right: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+.our-games-wrapper {
+  .game-content-wrapper {
+    .category-wrapper {
+      .btn {
+        @include btn(10px 22px, transparent, 18px, 400, none);
+        color: $link-color;
+        border-radius: 3px;
+        line-height: 1;
+        &:not(:last-child) {
+          margin-right: 25px;
+        }
+        &:focus {
+          box-shadow: none;
+        }
+      }
+      .active {
+        background-color: $heading-color;
+        color: $secondary-color;
+      }
+    }
+    .games-wrapper {
+      margin-top: 45px;
+      .load-more-box {
+        @include flexy-box();
+        .load-more {
+          margin-top: 35px;
+          @include btn(15px 30px, $third-color, 13px, 700, none);
+          color: $text-color;
+          &:focus {
+            box-shadow: none;
           }
         }
       }
