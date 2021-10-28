@@ -4,7 +4,8 @@ import { APP_ROUTES } from "../../routes/consts";
 
 const Routes: React.FC = () => {
   const Home = lazy(() => import("../pages/home/Home"));
-  const GameDetail = lazy(() => import("../pages/gameDetail/GameDetail"));
+  const Game = lazy(() => import("../pages/game/OurGame"));
+  const GameDetail = lazy(() => import("../pages/game/GameDetail"));
   const Studio = lazy(() => import("../pages/studio/Studio"));
   const TeamMemberDetail = lazy(
     () => import("../pages/studio/TeamMemberDetail")
@@ -13,6 +14,7 @@ const Routes: React.FC = () => {
     <Suspense fallback='loading'>
       <Switch>
         <Route exact path={APP_ROUTES.Home.PATH} component={Home} />
+        <Route exact path={APP_ROUTES.GAME.PATH} component={Game} />
         <Route path={APP_ROUTES.GAME.DETAILS.PATH} component={GameDetail} />
         <Route path={APP_ROUTES.STUDIO.PATH} component={Studio} />
         <Route

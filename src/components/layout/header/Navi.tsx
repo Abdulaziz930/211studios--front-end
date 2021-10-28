@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from "react";
 import { Container } from "reactstrap";
 import { NavLink } from "react-router-dom";
+import { APP_ROUTES } from "../../../routes/consts";
 
 const Navi: React.FC = (props) => {
   const [hamburgerMenuClassName, setHamburgerMenuClassName] =
@@ -49,17 +50,17 @@ const Navi: React.FC = (props) => {
           <div className='collapse navbar-collapse' id='navbarSupportedContent'>
             <ul className='navbar-nav ml-auto'>
               <li className='nav-item'>
-                <NavLink className='nav-link' to='/'>
+                <NavLink className='nav-link' to={APP_ROUTES.Home.PATH}>
                   Home
                 </NavLink>
               </li>
               <li className='nav-item'>
-                <NavLink className='nav-link' to='/our-games'>
+                <NavLink className='nav-link' to={APP_ROUTES.GAME.PATH}>
                   Our Games
                 </NavLink>
               </li>
               <li className='nav-item'>
-                <NavLink className='nav-link' to='/our-studios'>
+                <NavLink className='nav-link' to={APP_ROUTES.STUDIO.PATH}>
                   Our Studios
                 </NavLink>
               </li>
