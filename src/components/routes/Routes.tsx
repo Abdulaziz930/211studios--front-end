@@ -10,6 +10,7 @@ const Routes: React.FC = () => {
   const TeamMemberDetail = lazy(
     () => import("../pages/studio/TeamMemberDetail")
   );
+  const Contact = lazy(() => import("../pages/contact/Contact"));
   return (
     <Suspense fallback='loading'>
       <Switch>
@@ -21,6 +22,7 @@ const Routes: React.FC = () => {
           path={APP_ROUTES.STUDIO.TEAM_MEMBER_DETAIL.PATH}
           component={TeamMemberDetail}
         />
+        <Route path={APP_ROUTES.CONTACT.PATH} component={Contact} />
       </Switch>
     </Suspense>
   );

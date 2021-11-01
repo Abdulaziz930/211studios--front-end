@@ -371,3 +371,98 @@
     }
   }
 }
+.contact-wrapper {
+  .contact-content-wrapper {
+    .info-card-wrapper {
+      border: 1px solid $second-border-color;
+      margin-bottom: 35px;
+      padding: 45px 50px;
+      background-color: $card-bg-color;
+      box-shadow: 0 0 50px rgba(41, 48, 55, 0.15);
+      .section-heading {
+        font-family: $btn-font;
+        h2 {
+          @include text(15px, 700, $third-color);
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+        }
+        &::after {
+          width: 7%;
+          height: 2px;
+          bottom: -20px;
+        }
+      }
+      .content {
+        font-family: $secondary-font;
+        padding-top: 30px;
+        display: flex;
+        .icon-box {
+          @include flexy-box();
+          i {
+            @include text(18px, 500, $third-color);
+          }
+        }
+        p {
+          @include text(18px, 500, $secondary-color);
+          padding-left: 15px;
+          margin-bottom: 0;
+        }
+        .social-icon {
+          @include text(20px, 600, $link-color);
+          transition: all 0.3s;
+          &:not(:first-child) {
+            padding-left: 18px;
+          }
+          &:hover {
+            color: $secondary-color;
+          }
+        }
+      }
+    }
+    .contact-chat {
+      background-color: $bg-color;
+      padding: 90px 15px;
+      h1 {
+        @include text(60px, 700, $secondary-color);
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 80px;
+      }
+      .form-group {
+        margin-top: 40px;
+      }
+      .form-control {
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid $secondary-color;
+        padding-left: 0;
+        height: 100%;
+      }
+      .btn {
+        @include btn(20px 35px, $third-color, 13px, 700, none);
+        border-radius: 3px;
+        color: $text-color;
+        margin-top: 15px;
+        outline: none;
+        box-shadow: none;
+        &:hover {
+          @include btnHover($third-color);
+        }
+        .spinner-border {
+          margin-right: 5px;
+        }
+      }
+      .btn-disabled {
+        cursor: default;
+        opacity: 0.6;
+        outline: none;
+        box-shadow: none;
+        &:hover {
+          background-color: $third-color;
+          color: $text-color;
+        }
+      }
+    }
+  }
+}
