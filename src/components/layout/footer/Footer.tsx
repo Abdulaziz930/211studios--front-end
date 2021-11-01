@@ -5,6 +5,7 @@ import {
   IFooterDescriptionData,
   ISocialMediaData,
 } from "../../../models/models";
+import { APP_ROUTES } from "../../../routes/consts";
 
 const Footer: React.FC = () => {
   const [footerDescription] =
@@ -20,7 +21,7 @@ const Footer: React.FC = () => {
           <div className='col-md-4'>
             <div className='footer-bio'>
               <div className='logo-box'>
-                <Link to='/'>
+                <Link to={APP_ROUTES.Home.PATH}>
                   <img
                     src='http://localhost:3000/images/211logo.png'
                     alt='footer-logo'
@@ -37,6 +38,7 @@ const Footer: React.FC = () => {
                     href={social.socialLink}
                     target='_blank'
                     rel='noreferrer'
+                    key={social.id}
                     dangerouslySetInnerHTML={{ __html: social.socialIcon }}></a>
                 ))}
               </div>
@@ -47,22 +49,22 @@ const Footer: React.FC = () => {
               <h2>Company</h2>
               <ul>
                 <li>
-                  <Link to='/our-games'>
+                  <Link to={APP_ROUTES.GAME.PATH}>
                     <i className='fas fa-angle-right'></i> Our Games
                   </Link>
                 </li>
                 <li>
-                  <Link to='/our-studios'>
+                  <Link to={APP_ROUTES.STUDIO.PATH}>
                     <i className='fas fa-angle-right'></i> Our Studios
                   </Link>
                 </li>
                 <li>
-                  <Link to='/blog'>
+                  <Link to={APP_ROUTES.BLOG.PATH}>
                     <i className='fas fa-angle-right'></i> Blog
                   </Link>
                 </li>
                 <li>
-                  <Link to='/contact'>
+                  <Link to={APP_ROUTES.CONTACT.PATH}>
                     <i className='fas fa-angle-right'></i> Contact
                   </Link>
                 </li>
