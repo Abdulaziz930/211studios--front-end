@@ -101,3 +101,10 @@ export interface ITeamMemberBannerData {
   description: string;
   image: string;
 }
+
+export interface IContactData {
+  id: number;
+  email: string;
+  phoneNumber: string;
+  address: string;
+}

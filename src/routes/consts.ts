@@ -14,4 +14,7 @@ export const APP_ROUTES = {
       PATH: "/team-member/:id",
     },
   },
+  CONTACT: {
+    PATH: "/contact",
+  },
 };

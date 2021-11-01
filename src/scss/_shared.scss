@@ -20,8 +20,8 @@ body {
     position: relative;
     @include text(30px, 700, $secondary-color);
     text-transform: uppercase;
-    letter-spacing: 1px;
     &::after {
+      letter-spacing: 1px;
       content: "";
       position: absolute;
       height: 3px;
@@ -36,7 +36,7 @@ body {
     position: relative;
     border: 2px solid $second-border-color;
     border-radius: 0;
-    background-color: #03090d;
+    background-color: $card-bg-color;
     box-shadow: 0 0 50px rgba(41, 48, 55, 0.15);
     margin-bottom: 15px;
     .category-btn {
@@ -97,6 +97,20 @@ body {
         box-shadow: none;
         border-bottom: 1px solid $third-color !important;
       }
+      &::placeholder {
+        font-family: $btn-font;
+      }
+      color: $secondary-color;
     }
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    box-shadow: 0 0 0 30px $bg-color inset !important;
+    -webkit-text-fill-color: $secondary-color;
+    transition: background-color 5000s ease-in-out 0s;
+    caret-color: $secondary-color;
   }
 }
