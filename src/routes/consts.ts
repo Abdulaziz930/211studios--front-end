@@ -17,4 +17,10 @@ export const APP_ROUTES = {
   CONTACT: {
     PATH: "/contact",
   },
+  BLOG: {
+    PATH: "/blog",
+    DETAILS: {
+      PATH: "/blog/:id",
+    },
+  },
 };
