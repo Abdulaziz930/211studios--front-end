@@ -22,5 +22,8 @@ export const APP_ROUTES = {
     DETAILS: {
       PATH: "/blog/:id",
     },
+    AUTHOR_BLOG: {
+      PATH: "/blog/author/:id",
+    },
   },
 };

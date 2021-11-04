@@ -108,3 +108,12 @@ export interface IContactData {
   phoneNumber: string;
   address: string;
 }
+
+export interface IBlogData {
+  id: number;
+  title: string;
+  content: string;
+  image: string;
+  lastModificationDate: string;
+  appUserDto: ITeamMemberData;
+}
