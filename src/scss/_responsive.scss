@@ -24,6 +24,13 @@
         }
       }
     }
+    .blog-wrapper {
+      .blog-content-wrapper {
+        .search-box {
+          top: 7%;
+        }
+      }
+    }
   }
 }
 
@@ -115,6 +122,16 @@
         margin-top: 30px;
         .team-member-detail-content {
           padding-top: 0;
+        }
+      }
+    }
+    .blog-wrapper {
+      .blog-content-wrapper {
+        .search-box {
+          padding: 20px 20px 20px 10px;
+          .icon-box {
+            right: 25px;
+          }
         }
       }
     }
@@ -251,6 +268,27 @@
         margin-top: 50px;
         .team-member-detail-content {
           padding-top: 30px;
+        }
+      }
+    }
+    .blog-wrapper {
+      .blog-content-wrapper {
+        .blog-card-wrapper {
+          margin-top: 30px;
+          .card {
+            img {
+              height: 200px;
+            }
+            .card-body {
+              padding: 50px 20px 15px 20px;
+            }
+            .card-footer {
+              padding: 0 20px 35px;
+            }
+          }
+        }
+        .search-box {
+          margin-top: 40px;
         }
       }
     }

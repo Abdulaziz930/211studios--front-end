@@ -11,6 +11,8 @@ const Routes: React.FC = () => {
     () => import("../pages/studio/TeamMemberDetail")
   );
   const Contact = lazy(() => import("../pages/contact/Contact"));
+  const Blog = lazy(() => import("../pages/blog/Blog"));
+  const BlogDetail = lazy(() => import("../pages/blog/BlogDetail"));
   return (
     <Suspense fallback='loading'>
       <Switch>
@@ -23,6 +25,8 @@ const Routes: React.FC = () => {
           component={TeamMemberDetail}
         />
         <Route path={APP_ROUTES.CONTACT.PATH} component={Contact} />
+        <Route exact path={APP_ROUTES.BLOG.PATH} component={Blog} />
+        <Route path={APP_ROUTES.BLOG.DETAILS.PATH} component={BlogDetail} />
       </Switch>
     </Suspense>
   );
