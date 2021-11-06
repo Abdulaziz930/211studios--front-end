@@ -13,7 +13,7 @@ const Intro: React.FC = () => {
           <Carousel.Item key={slider.id}>
             <img
               className='w-100'
-              src={`http://localhost:3000/images/${slider.image}`}
+              src={`${process.env.REACT_APP_API_IMAGES}${slider.image}`}
               alt={slider.title}
             />
             <Carousel.Caption>

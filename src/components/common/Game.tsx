@@ -17,7 +17,7 @@ const Game: React.FC<IProps> = ({ game, isDetail }) => {
         {isDetail ? (
           <img
             className='card-img-top img-fluid'
-            src={`http://localhost:3000/images/${game.image}`}
+            src={`${process.env.REACT_APP_API_IMAGES}${game.image}`}
             alt={game.name}
             onClick={() => push(`${game.id}`)}
           />
@@ -25,7 +25,7 @@ const Game: React.FC<IProps> = ({ game, isDetail }) => {
           <Link to={`games/${game.id}`}>
             <img
               className='card-img-top img-fluid'
-              src={`http://localhost:3000/images/${game.image}`}
+              src={`${process.env.REACT_APP_API_IMAGES}${game.image}`}
               alt={game.name}
             />
           </Link>

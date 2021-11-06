@@ -19,7 +19,7 @@ const GameDetail: React.FC = () => {
       <div className='game-detail-header'>
         <img
           className='img-fluid'
-          src={`http://localhost:3000/images/${data?.image}`}
+          src={`${process.env.REACT_APP_API_IMAGES}${data?.image}`}
           alt={data?.name}
         />
         <div className='header-title'>
@@ -44,7 +44,7 @@ const GameDetail: React.FC = () => {
                 }}></div>
               <div className='video-player'>
                 <LionPlayer
-                  src={`http://localhost:3000/videos/${data?.video}`}
+                  src={`${process.env.REACT_APP_API_VIDEOS}${data?.video}`}
                 />
               </div>
             </div>
