@@ -28,7 +28,7 @@ const TeamMemberDetail: React.FC = () => {
             <div className='col-md-6'>
               <div className='imgBox'>
                 <img
-                  src={`http://localhost:3000/images/${data?.image}`}
+                  src={`${process.env.REACT_APP_API_IMAGES}${data?.image}`}
                   className='img-fluid'
                   alt='teamMemberImage'
                 />

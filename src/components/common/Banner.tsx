@@ -10,7 +10,7 @@ const Banner: React.FC<IProps> = ({ title, description, image }) => {
   return (
     <div className='banner-wrapper'>
       <img
-        src={`http://localhost:3000/images/${image}`}
+        src={`${process.env.REACT_APP_API_IMAGES}${image}`}
         alt='bannerimage'
         className='w-100'
       />

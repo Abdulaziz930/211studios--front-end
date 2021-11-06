@@ -31,7 +31,7 @@ const BlogCard: React.FC<IProps> = ({
       <div className='card'>
         <Link to={`/blog/${id}`}>
           <img
-            src={`http://localhost:3000/images/${image}`}
+            src={`${process.env.REACT_APP_API_IMAGES}${image}`}
             alt='blog_image'
             className='card-img-top img-fluid'
           />
@@ -51,7 +51,7 @@ const BlogCard: React.FC<IProps> = ({
         <div className='card-footer'>
           <Link to={`/blog/author/${author.id}`} className='card-footer-item'>
             <img
-              src={`http://localhost:3000/images/${author.image}`}
+              src={`${process.env.REACT_APP_API_IMAGES}${author.image}`}
               alt='author_image'
             />
             <span className='author-name'>{author.fullName}</span>

@@ -11,7 +11,7 @@ const OurCompany: React.FC = () => {
     backgroundImage:
       window.innerWidth < 768
         ? "none"
-        : `url(http://localhost:3000/images/${data?.image})`,
+        : `url(${process.env.REACT_APP_API_IMAGES}${data?.image})`,
     backgroundPosition: "bottom center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "100% auto",

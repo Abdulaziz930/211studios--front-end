@@ -13,7 +13,7 @@ const BlogDetail: React.FC = () => {
       <div className='blog-detail-header'>
         <img
           className='img-fluid'
-          src={`http://localhost:3000/images/${data?.image}`}
+          src={`${process.env.REACT_APP_API_IMAGES}${data?.image}`}
           alt={data?.title}
         />
         <div className='header-title'>
@@ -26,7 +26,7 @@ const BlogDetail: React.FC = () => {
                 to={`/blog/author/${data?.appUserDto.id}`}
                 className='card-footer-item'>
                 <img
-                  src={`http://localhost:3000/images/${data?.appUserDto.image}`}
+                  src={`${process.env.REACT_APP_API_IMAGES}${data?.appUserDto.image}`}
                   alt='author_image'
                 />
                 <span className='author-name'>{data?.appUserDto.fullName}</span>

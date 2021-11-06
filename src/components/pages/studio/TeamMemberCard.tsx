@@ -21,7 +21,7 @@ const TeamMemberCard: React.FC<IProps> = ({
         <Link to={`team-member/${id}`}>
           <img
             className='card-img w-100'
-            src={`http://localhost:3000/images/${image}`}
+            src={`${process.env.REACT_APP_API_IMAGES}${image}`}
             alt='Cardimage'
           />
           <div className='card-img-overlay overlay-text'>
