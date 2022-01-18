@@ -50,14 +50,12 @@ const GameDetail: React.FC = () => {
               <div className='details'>
                 <div className='details-item relased-date'>
                   <h2>RELEASED ON</h2>
-                  <p>{moment(data?.creationDate).format("L")}</p>
+                  <p>{moment(data?.relaseDate).format("L")}</p>
                 </div>
-                {moment(data?.creationDate).isBefore(
-                  moment(data?.lastModificationDate)
-                ) ? (
+                {data?.lastUpdateDate !== null ? (
                   <div className='details-item update-date'>
                     <h2>LAST UPDATE DATE</h2>
-                    <p>{moment(data?.lastModificationDate).format("L")}</p>
+                    <p>{moment(data?.lastUpdateDate).format("L")}</p>
                   </div>
                 ) : (
                   ""
