@@ -133,3 +133,17 @@ body {
     caret-color: $secondary-color;
   }
 }
+
+/* scroll styles start */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $selection-color;
+  border-radius: 6px;
+  &:hover {
+    background: $third-color;
+  }
+}
+/* scroll styles end */
