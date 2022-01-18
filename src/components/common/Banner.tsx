@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useFireBaseStorageUrl } from "../../hooks/useFireBaseStorageUrl";
 import { FileTypes } from "../../utils/consts";
 

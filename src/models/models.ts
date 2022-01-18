@@ -38,8 +38,8 @@ export interface IGameDetailData {
   description: string;
   categories: ICategory[];
   platforms: IPlatform[];
-  creationDate: string;
-  lastModificationDate?: string;
+  relaseDate: string;
+  lastUpdateDate?: string;
   size: string;
   image: string;
   video?: string;
