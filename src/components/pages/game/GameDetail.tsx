@@ -6,6 +6,8 @@ import CategoryButton from "../../common/CategoryButton";
 import { LionPlayer } from "lion-player";
 import moment from "moment";
 import Game from "../../common/Game";
+import { useFireBaseStorageUrl } from "../../../hooks/useFireBaseStorageUrl";
+import { FileTypes } from "../../../utils/consts";
 
 const GameDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -13,15 +15,13 @@ const GameDetail: React.FC = () => {
   const [games] = useAsyncData<IGameData[]>(
     `Game/getGamesByCategory/${data?.categories[0].id}/${data?.id}/3`
   );
+  const imageUrl = useFireBaseStorageUrl(data?.image ?? "", FileTypes.Image);
+  const videoUrl = useFireBaseStorageUrl(data?.video ?? "", FileTypes.Video);
 
   return (
     <div className='game-detail'>
       <div className='game-detail-header'>
-        <img
-          className='img-fluid'
-          src={`${process.env.REACT_APP_API_IMAGES}${data?.image}`}
-          alt={data?.name}
-        />
+        <img className='img-fluid' src={imageUrl} alt={data?.name} />
         <div className='header-title'>
           <div className='container'>
             {data?.categories.map((category) => (
@@ -43,9 +43,7 @@ const GameDetail: React.FC = () => {
                   __html: data?.description ? data.description : "",
                 }}></div>
               <div className='video-player'>
-                <LionPlayer
-                  src={`${process.env.REACT_APP_API_VIDEOS}${data?.video}`}
-                />
+                <LionPlayer src={`${videoUrl}`} />
               </div>
             </div>
             <div className='col-md-4'>

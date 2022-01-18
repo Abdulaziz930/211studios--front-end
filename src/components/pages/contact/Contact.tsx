@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { useAsyncData } from "../../../hooks/useAsyncData";
-import { IContactData, ISocialMediaData } from "../../../models/models";
+import {
+  IBannerData,
+  IContactData,
+  ISocialMediaData,
+} from "../../../models/models";
 import { useForm, SubmitHandler } from "react-hook-form";
 import Banner from "../../common/Banner";
 import InfoCard from "./InfoCard";
@@ -19,6 +23,7 @@ const Contact: React.FC = () => {
   const [socialMedias] = useAsyncData<ISocialMediaData[]>(
     "Social/getSocialMedias"
   );
+  const [banner] = useAsyncData<IBannerData>("Contact/getContactBanner");
   const {
     register,
     handleSubmit,
@@ -43,9 +48,9 @@ const Contact: React.FC = () => {
   return (
     <div className='contact-wrapper'>
       <Banner
-        title='CONTACT'
-        description='Reach out to our team for general and business enquiries'
-        image='page-title-contact.jpg'
+        title={banner.data?.title}
+        description={banner.data?.description}
+        image={banner.data?.image}
       />
       <div className='contact-content-wrapper'>
         <div className='contact-info'>

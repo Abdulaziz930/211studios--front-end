@@ -4,17 +4,18 @@ import { IStudioPageData, ITeamMemberData } from "../../../models/models";
 import Banner from "../../common/Banner";
 import CSS from "csstype";
 import TeamMemberCard from "./TeamMemberCard";
+import { useFireBaseStorageUrl } from "../../../hooks/useFireBaseStorageUrl";
+import { FileTypes } from "../../../utils/consts";
 
 const Studio: React.FC = () => {
   const [{ data }] = useAsyncData<IStudioPageData>("Studio/getStudio");
   const [teamMembers] = useAsyncData<ITeamMemberData[]>(
     "TeamMember/getTeamMembers"
   );
+  const imageUrl = useFireBaseStorageUrl(data?.image ?? "", FileTypes.Image);
+
   const sectionStyles: CSS.Properties = {
-    backgroundImage:
-      window.innerWidth < 768
-        ? "none"
-        : `url(${process.env.REACT_APP_API_IMAGES}${data?.image})`,
+    backgroundImage: window.innerWidth < 768 ? "none" : `url(${imageUrl})`,
     backgroundPosition:
       window.innerWidth >= 768 && window.innerWidth < 1024
         ? "center center"

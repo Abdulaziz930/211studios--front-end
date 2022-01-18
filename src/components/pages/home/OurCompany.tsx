@@ -3,15 +3,15 @@ import { useAsyncData } from "../../../hooks/useAsyncData";
 import { IStudioData } from "../../../models/models";
 import { Link } from "react-router-dom";
 import CSS from "csstype";
+import { useFireBaseStorageUrl } from "../../../hooks/useFireBaseStorageUrl";
+import { FileTypes } from "../../../utils/consts";
 
 const OurCompany: React.FC = () => {
   const [{ data }] = useAsyncData<IStudioData>("Home/getStudio");
+  const imageUrl = useFireBaseStorageUrl(data?.image ?? "", FileTypes.Image);
 
   const sectionStyles: CSS.Properties = {
-    backgroundImage:
-      window.innerWidth < 768
-        ? "none"
-        : `url(${process.env.REACT_APP_API_IMAGES}${data?.image})`,
+    backgroundImage: window.innerWidth < 768 ? "none" : `url(${imageUrl})`,
     backgroundPosition: "bottom center",
     backgroundRepeat: "no-repeat",
     backgroundSize: "100% auto",

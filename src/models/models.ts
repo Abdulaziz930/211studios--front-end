@@ -95,7 +95,7 @@ export interface ITeamMemberDetailData {
   userSocialMediasDto: IUserSocialMediaData[];
 }
 
-export interface ITeamMemberBannerData {
+export interface IBannerData {
   id: number;
   title: string;
   description: string;

@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useFireBaseStorageUrl } from "../../../hooks/useFireBaseStorageUrl";
+import { FileTypes } from "../../../utils/consts";
 
 interface IProps {
   id: string;
@@ -14,16 +16,17 @@ const TeamMemberCard: React.FC<IProps> = ({
   position,
   image,
 }) => {
+  const imageUrl = useFireBaseStorageUrl(image, FileTypes.Image);
   let title = fullName.split(" ");
   return (
     <div className='team-member-card'>
       <div className='card'>
         <Link to={`team-member/${id}`}>
-          <img
-            className='card-img w-100'
-            src={`${process.env.REACT_APP_API_IMAGES}${image}`}
-            alt='Cardimage'
-          />
+          {imageUrl !== "" ? (
+            <img className='card-img w-100' src={imageUrl} alt='Cardimage' />
+          ) : (
+            <div style={{ height: "350px", backgroundColor: "#03090d" }}></div>
+          )}
           <div className='card-img-overlay overlay-text'>
             <div className='card-heading'>
               {title.map((item, index) => {

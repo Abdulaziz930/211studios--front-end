@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { IGameData } from "../../models/models";
 import CategoryButton from "./CategoryButton";
 import { useHistory } from "react-router-dom";
+import { useFireBaseStorageUrl } from "../../hooks/useFireBaseStorageUrl";
+import { FileTypes } from "../../utils/consts";
 
 interface IProps {
   game: IGameData;
@@ -10,6 +12,8 @@ interface IProps {
 }
 
 const Game: React.FC<IProps> = ({ game, isDetail }) => {
+  const imageUrl = useFireBaseStorageUrl(game.image, FileTypes.Image);
+
   const { push } = useHistory();
   return (
     <>
@@ -17,17 +21,22 @@ const Game: React.FC<IProps> = ({ game, isDetail }) => {
         {isDetail ? (
           <img
             className='card-img-top img-fluid'
-            src={`${process.env.REACT_APP_API_IMAGES}${game.image}`}
+            src={imageUrl}
             alt={game.name}
             onClick={() => push(`${game.id}`)}
           />
         ) : (
           <Link to={`games/${game.id}`}>
-            <img
-              className='card-img-top img-fluid'
-              src={`${process.env.REACT_APP_API_IMAGES}${game.image}`}
-              alt={game.name}
-            />
+            {imageUrl !== "" ? (
+              <img
+                className='card-img-top img-fluid'
+                src={imageUrl}
+                alt={game.name}
+              />
+            ) : (
+              <div
+                style={{ height: "350px", backgroundColor: "#03090d" }}></div>
+            )}
           </Link>
         )}
         <CategoryButton category={game.category} />

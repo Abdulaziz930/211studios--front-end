@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { useAsyncData } from "../../../hooks/useAsyncData";
-import { ICategory, IGameData } from "../../../models/models";
+import { IBannerData, ICategory, IGameData } from "../../../models/models";
 import Banner from "../../common/Banner";
 import Game from "../../common/Game";
 
@@ -17,6 +17,7 @@ const OurGame: React.FC = () => {
   const [filteredGamesCount] = useAsyncData<number>(
     `Game/getGamesCount/${categoryId}`
   );
+  const [gameBanner] = useAsyncData<IBannerData>("Game/getGameBanner");
   const [gameList, setGameList] = useState<IGameData[]>(games.data ?? []);
 
   useEffect(() => {
@@ -53,9 +54,9 @@ const OurGame: React.FC = () => {
   return (
     <div className='our-games-wrapper'>
       <Banner
-        title='OUR GAMES'
-        description='We Develop Games with Creative Gameplay and Immersive Stories'
-        image='game-banner.jpg'
+        title={gameBanner.data?.title}
+        description={gameBanner.data?.description}
+        image={gameBanner.data?.image}
       />
       <div className='game-content-wrapper'>
         <div className='container'>

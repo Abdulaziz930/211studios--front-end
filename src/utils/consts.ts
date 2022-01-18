@@ -8,3 +8,8 @@ export const INITIAL_ASYNC_DATA: IAsyncData<any> = {
 export const IMG_URL: IUrlData = {
   url: "D:/Programming/211studios/211studios__BackEnd/AdminPanel/wwwroot/images/",
 };
+
+export enum FileTypes {
+  Image,
+  Video,
+}
