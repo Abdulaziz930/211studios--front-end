@@ -1,7 +1,7 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { mainAPI } from "../../../api";
 import { useAsyncData } from "../../../hooks/useAsyncData";
-import { IBlogData } from "../../../models/models";
+import { IBannerData, IBlogData } from "../../../models/models";
 import { Pagination } from "react-bootstrap";
 import Banner from "../../common/Banner";
 import BlogCard from "./BlogCard";
@@ -12,6 +12,7 @@ const Blog: React.FC = () => {
   const [isSearching, setIsSearching] = useState<boolean>(false);
   const [searchedBlogs, setSearchedBlogs] = useState<IBlogData[]>([]);
   const [blogCount] = useAsyncData<number>("Blog/getBlogsCount");
+  const [banner] = useAsyncData<IBannerData>("Blog/getBlogBanner");
   const [page, setPage] = useState<number>(1);
   const [count, setCount] = useState<number>(0);
 
@@ -78,9 +79,9 @@ const Blog: React.FC = () => {
   return (
     <div className='blog-wrapper'>
       <Banner
-        title='BLOG'
-        description='Stay Current with 211 Studios'
-        image='game-banner.jpg'
+        title={banner.data?.title}
+        description={banner.data?.description}
+        image={banner.data?.image}
       />
       <div className='blog-content-wrapper'>
         <div className='container'>

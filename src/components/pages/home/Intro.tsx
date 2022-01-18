@@ -2,6 +2,7 @@ import React from "react";
 import { useAsyncData } from "../../../hooks/useAsyncData";
 import { ISliderItem } from "../../../models/models";
 import { Carousel } from "react-bootstrap";
+import SliderImage from "./SliderImage";
 
 const Intro: React.FC = () => {
   const [{ data }] = useAsyncData<ISliderItem[]>("Home/getSliders");
@@ -11,11 +12,7 @@ const Intro: React.FC = () => {
       <Carousel>
         {data?.map((slider) => (
           <Carousel.Item key={slider.id}>
-            <img
-              className='w-100'
-              src={`${process.env.REACT_APP_API_IMAGES}${slider.image}`}
-              alt={slider.title}
-            />
+            <SliderImage Image={slider.image} Title={slider.title} />
             <Carousel.Caption>
               <div className='row'>
                 <div className='col-xl-5'>

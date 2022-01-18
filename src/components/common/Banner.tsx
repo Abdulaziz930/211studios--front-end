@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useFireBaseStorageUrl } from "../../hooks/useFireBaseStorageUrl";
+import { FileTypes } from "../../utils/consts";
 
 interface IProps {
   title?: string;
@@ -7,17 +9,15 @@ interface IProps {
 }
 
 const Banner: React.FC<IProps> = ({ title, description, image }) => {
+  const bannerImage = useFireBaseStorageUrl(image ?? "", FileTypes.Image);
+
   return (
     <div className='banner-wrapper'>
-      <img
-        src={`${process.env.REACT_APP_API_IMAGES}${image}`}
-        alt='bannerimage'
-        className='w-100'
-      />
+      <img src={bannerImage} alt='bannerimage' className='w-100' />
       <div className='text-container'>
         <div className='container'>
           <div className='title'>
-            <h1>{title}</h1>
+            <h1>{title?.toUpperCase()}</h1>
           </div>
           <div className='description'>
             <p>{description}</p>

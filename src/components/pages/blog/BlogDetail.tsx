@@ -4,18 +4,25 @@ import { Link } from "react-router-dom";
 import { useAsyncData } from "../../../hooks/useAsyncData";
 import { IBlogData } from "../../../models/models";
 import moment from "moment";
+import { FileTypes } from "../../../utils/consts";
+import { useFireBaseStorageUrl } from "../../../hooks/useFireBaseStorageUrl";
 
 const BlogDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [{ data }] = useAsyncData<IBlogData>(`Blog/getBlog/${id}`);
+  const imageUrl = useFireBaseStorageUrl(data?.image ?? "", FileTypes.Image);
+  const authorImageUrl = useFireBaseStorageUrl(
+    data?.appUserDto.image ?? "",
+    FileTypes.Image
+  );
   return (
     <div className='blog-detail-wrapper'>
       <div className='blog-detail-header'>
-        <img
-          className='img-fluid'
-          src={`${process.env.REACT_APP_API_IMAGES}${data?.image}`}
-          alt={data?.title}
-        />
+        {imageUrl !== "" ? (
+          <img className='img-fluid' src={imageUrl} alt={data?.title} />
+        ) : (
+          <div style={{ height: "350px", backgroundColor: "#03090d" }}></div>
+        )}
         <div className='header-title'>
           <div className='container'>
             <div className='title'>
@@ -25,10 +32,16 @@ const BlogDetail: React.FC = () => {
               <Link
                 to={`/blog/author/${data?.appUserDto.id}`}
                 className='card-footer-item'>
-                <img
-                  src={`${process.env.REACT_APP_API_IMAGES}${data?.appUserDto.image}`}
-                  alt='author_image'
-                />
+                {authorImageUrl !== "" ? (
+                  <img src={authorImageUrl} alt='author_image' />
+                ) : (
+                  <div
+                    style={{
+                      height: "30px",
+                      width: "30px",
+                      backgroundColor: "#03090d",
+                    }}></div>
+                )}
                 <span className='author-name'>{data?.appUserDto.fullName}</span>
               </Link>
               <span className='date card-footer-item'>

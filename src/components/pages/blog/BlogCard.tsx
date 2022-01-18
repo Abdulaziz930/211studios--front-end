@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import "@firebase/auth";
+import { useFireBaseStorageUrl } from "../../../hooks/useFireBaseStorageUrl";
+import { FileTypes } from "../../../utils/consts";
 
 interface IAuthorData {
   id: string;
@@ -26,15 +29,22 @@ const BlogCard: React.FC<IProps> = ({
   author,
   id,
 }) => {
+  const imageUrl = useFireBaseStorageUrl(image, FileTypes.Image);
+  const authorImageUrl = useFireBaseStorageUrl(author.image, FileTypes.Image);
+
   return (
     <div className='blog-card-wrapper'>
       <div className='card'>
         <Link to={`/blog/${id}`}>
-          <img
-            src={`${process.env.REACT_APP_API_IMAGES}${image}`}
-            alt='blog_image'
-            className='card-img-top img-fluid'
-          />
+          {imageUrl !== "" ? (
+            <img
+              src={imageUrl}
+              alt='blog_image'
+              className='card-img-top img-fluid'
+            />
+          ) : (
+            <div style={{ height: "350px", backgroundColor: "#03090d" }}></div>
+          )}
         </Link>
         <div className='card-body'>
           <h2 className='card-title'>
@@ -50,10 +60,16 @@ const BlogCard: React.FC<IProps> = ({
         </div>
         <div className='card-footer'>
           <Link to={`/blog/author/${author.id}`} className='card-footer-item'>
-            <img
-              src={`${process.env.REACT_APP_API_IMAGES}${author.image}`}
-              alt='author_image'
-            />
+            {authorImageUrl !== "" ? (
+              <img src={authorImageUrl} alt='author_image' />
+            ) : (
+              <div
+                style={{
+                  height: "30px",
+                  width: "30px",
+                  backgroundColor: "#03090d",
+                }}></div>
+            )}
             <span className='author-name'>{author.fullName}</span>
           </Link>
           <span className='date card-footer-item'>

@@ -1,10 +1,9 @@
 import React from "react";
 import { useParams } from "react-router";
 import { useAsyncData } from "../../../hooks/useAsyncData";
-import {
-  ITeamMemberBannerData,
-  ITeamMemberDetailData,
-} from "../../../models/models";
+import { useFireBaseStorageUrl } from "../../../hooks/useFireBaseStorageUrl";
+import { IBannerData, ITeamMemberDetailData } from "../../../models/models";
+import { FileTypes } from "../../../utils/consts";
 import Banner from "../../common/Banner";
 
 const TeamMemberDetail: React.FC = () => {
@@ -12,9 +11,9 @@ const TeamMemberDetail: React.FC = () => {
   const [{ data }] = useAsyncData<ITeamMemberDetailData>(
     `TeamMember/getTeamMemberDetail/${id}`
   );
-  const [banner] = useAsyncData<ITeamMemberBannerData>(
-    "TeamMember/getTeamMemberDetailBanner"
-  );
+  const [banner] = useAsyncData<IBannerData>("TeamMember/getTeamMemberBanner");
+  const imageUrl = useFireBaseStorageUrl(data?.image ?? "", FileTypes.Image);
+
   return (
     <div className='team-member-detail-wrapper'>
       <Banner
@@ -28,7 +27,7 @@ const TeamMemberDetail: React.FC = () => {
             <div className='col-md-6'>
               <div className='imgBox'>
                 <img
-                  src={`${process.env.REACT_APP_API_IMAGES}${data?.image}`}
+                  src={imageUrl}
                   className='img-fluid'
                   alt='teamMemberImage'
                 />
