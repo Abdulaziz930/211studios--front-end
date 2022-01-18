@@ -16,6 +16,25 @@ body {
     background: $selection-color;
   }
 
+  /* Spinner styles start */
+  .spinner {
+    z-index: 10;
+    background-color: $primary-color;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+  }
+  .spinner-box {
+    transform: translateY(90%);
+    height: 50%;
+    .text-primary-color {
+      color: $selection-color;
+    }
+  }
+  /* Spinner styles end */
+
   .section-heading {
     position: relative;
     @include text(30px, 700, $secondary-color);
